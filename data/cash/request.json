@@ -1,0 +1,12 @@
+{
+  "entities": [
+    "meta",
+    "innolight",
+    "eoptolink"
+  ],
+  "previousAsOf": "2026-10-07T12:00:00Z",
+  "asOf": "2026-10-23T23:33:54.268Z",
+  "thesis": "cash-conversion",
+  "minimumCashRatioPct": null,
+  "note": ""
+}

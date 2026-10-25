@@ -1,0 +1,2 @@
+Original compilation and commentary: Creative Commons Attribution 4.0, https://creativecommons.org/licenses/by/4.0/
+Python verifier: MIT; see CODE-LICENSE.txt. Third-party source rights are not relicensed.

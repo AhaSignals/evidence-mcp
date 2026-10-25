@@ -1,0 +1,21 @@
+{
+  "version": "0.1.0",
+  "reviewed_at": "2026-10-24T23:42:55.474666+00:00",
+  "operator": "AhaSignals",
+  "issuers": [
+    "CRM",
+    "ADBE",
+    "INTU",
+    "PYPL"
+  ],
+  "counts": {
+    "sources": 7,
+    "events": 6,
+    "cash-checks": 4,
+    "product-terms": 2
+  },
+  "base_version_unchanged": "0.1.1",
+  "initial_observation_only": true,
+  "validated_return_signal": false,
+  "independent_reference_review": false
+}

@@ -1,0 +1,46 @@
+{
+  "manifest_version": "0.3",
+  "name": "ahasignals-evidence-mcp",
+  "display_name": "AhaSignals Evidence",
+  "version": "0.1.1",
+  "description": "Read-only financial evidence: disclosure cutoffs, operating metric scope, cash checks and replay.",
+  "author": {
+    "name": "AhaSignals",
+    "url": "https://ahasignals.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AhaSignals/evidence-mcp"
+  },
+  "homepage": "https://ahasignals.com/research/company-kpi-history/#agent-connection",
+  "documentation": "https://github.com/AhaSignals/evidence-mcp#readme",
+  "support": "https://github.com/AhaSignals/evidence-mcp/issues",
+  "server": {
+    "type": "node",
+    "entry_point": "server.mjs",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server.mjs"
+      ]
+    }
+  },
+  "tools_generated": true,
+  "keywords": [
+    "finance",
+    "evidence",
+    "point-in-time",
+    "cash-flow"
+  ],
+  "license": "MIT",
+  "compatibility": {
+    "platforms": [
+      "darwin",
+      "win32",
+      "linux"
+    ],
+    "runtimes": {
+      "node": ">=22"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "1.0.0",
+  "publisher": "AhaSignals",
+  "seedVersion": "1.0.0",
+  "sourceReceiptsThrough": "2026-10-23T23:28:05.329753+00:00",
+  "files": {
+    "README.md": "e8dbd566c8567c86646ae20e6022941a4c47e7405f819a3663f4eace8ef1a884",
+    "agent-manifest.json": "5c382ff321c7b17f274fb752d8f47657145eba12530c9842fda3aa4353277f57",
+    "expansion-entities.jsonl": "2e7a29dd25d159e063bd440831692f03a4813ce8d7eb1495f36f91feaa5ebc4d",
+    "expansion-facts.jsonl": "7f8c40ac1fd84f31205d31ca0c647522bf1820524d5eb5f28bb04faa91ebf486",
+    "health.json": "8c888ced44039bc6495ef355473eec6f779f9572f5f72c591c73bfcea79547ad",
+    "snapshot.json": "fd89ebd1e929fdf594aa40547d6d8fc85d7b31a0d2bfd4999922b2ab0046cfcf",
+    "task-report.mjs": "3cdae5f8d7ee08800c2a326913e4d00d851738344fae77ce03ba17d67a6e0ede",
+    "task.mjs": "968046904ea28102654416eec2bab816cbff04d9ee9f6215bff050a56026d961",
+    "workflow-cli.mjs": "371b353584ac57b4218ca7684ef2926ff46b29575f215785e5cb7155eb12a11c",
+    "workflow.mjs": "b1f74663eba131456887e1927c1858b7a9b25075025ef520898ea906377af21a"
+  }
+}

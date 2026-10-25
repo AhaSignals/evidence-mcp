@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AhaSignals cash and funding review request",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "entities",
+    "previousAsOf",
+    "asOf",
+    "thesis"
+  ],
+  "properties": {
+    "entities": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 12,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "msft",
+          "meta",
+          "nvda",
+          "micron",
+          "sk",
+          "samsung",
+          "tsmc",
+          "tel",
+          "adv",
+          "asml",
+          "innolight",
+          "eoptolink"
+        ]
+      }
+    },
+    "previousAsOf": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "asOf": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "thesis": {
+      "enum": [
+        "cash-conversion",
+        "self-funded",
+        "investment-continuity"
+      ]
+    },
+    "minimumCashRatioPct": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1000
+    },
+    "note": {
+      "type": "string",
+      "maxLength": 2000
+    }
+  }
+}

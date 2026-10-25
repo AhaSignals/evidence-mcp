@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "publisher": "AhaSignals",
+  "latest_checked_at": "2026-10-25T01:13:33.238921+00:00",
+  "reviewed_release": "0.1.0",
+  "last_financial_review_at": "2026-10-24T23:42:55.474666+00:00",
+  "reviewed_source_captures_through": "2026-10-24T23:41:45.204671+00:00",
+  "reviewed_periods": [
+    "2025-08-01/2026-07-31",
+    "2026 Q2",
+    "2026-04-01/2026-06-30",
+    "2026-05-30/2026-08-28",
+    "FY2026 Q3",
+    "FY2027",
+    "FY2027 Q2",
+    "FY2027 onward"
+  ],
+  "sources": [
+    {
+      "source_id": "crm-sec",
+      "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm",
+      "last_attempt_at": "2026-10-25T01:13:33.238921+00:00",
+      "last_successful_capture_at": "2026-10-25T01:13:34.217464+00:00",
+      "status": "changed-bytes-awaiting-review",
+      "normalized_text_changed": false
+    },
+    {
+      "source_id": "pypl",
+      "url": "https://www.sec.gov/Archives/edgar/data/1633917/000163391726000080/pypl2q-26earningsrelease.htm",
+      "last_attempt_at": "2026-10-25T01:13:33.238921+00:00",
+      "last_successful_capture_at": "2026-10-25T01:13:35.033829+00:00",
+      "status": "changed-bytes-awaiting-review",
+      "normalized_text_changed": false
+    },
+    {
+      "source_id": "adbe",
+      "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm",
+      "last_attempt_at": "2026-10-25T01:13:33.238921+00:00",
+      "last_successful_capture_at": "2026-10-25T01:13:36.015520+00:00",
+      "status": "changed-bytes-awaiting-review",
+      "normalized_text_changed": false
+    },
+    {
+      "source_id": "intu",
+      "url": "https://investors.intuit.com/news-events/press-releases/detail/1320/intuit-reports-fourth-quarter-and-full-year-fiscal-2026-results-sets-fiscal-2027-guidance",
+      "last_attempt_at": "2026-10-25T01:13:33.238921+00:00",
+      "last_successful_capture_at": "2026-10-25T01:13:37.088890+00:00",
+      "status": "unchanged-bytes",
+      "normalized_text_changed": false
+    },
+    {
+      "source_id": "crm-pricing",
+      "url": "https://www.salesforce.com/agentforce/pricing/",
+      "last_attempt_at": "2026-10-25T01:13:33.238921+00:00",
+      "last_successful_capture_at": "2026-10-25T01:13:38.880626+00:00",
+      "status": "changed-bytes-awaiting-review",
+      "normalized_text_changed": false
+    },
+    {
+      "source_id": "adbe-pricing",
+      "url": "https://www.adobe.com/products/firefly/plans.html",
+      "last_attempt_at": "2026-10-25T01:13:33.238921+00:00",
+      "last_successful_capture_at": "2026-10-25T01:13:39.856990+00:00",
+      "status": "content-incomplete-awaiting-review",
+      "normalized_text_changed": false
+    }
+  ],
+  "open_source_review_candidates": 5,
+  "coverage": "Registered URLs only; official-index discovery is separate. Missing runs remain gaps.",
+  "financial_updates_automatically_approved": false,
+  "review_mode": "AI-assisted single-operator"
+}

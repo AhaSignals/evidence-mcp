@@ -1,0 +1,104 @@
+{
+  "version": "1.0.0",
+  "publisher": "AhaSignals",
+  "task": "Review cash realization and funding evidence before a portfolio rebalance",
+  "method": "Local Node.js CLI, no API key or paid provider; deterministic shared browser/Node calculation",
+  "inputSchema": "request.schema.json",
+  "entrypoint": "cli.mjs",
+  "mcp": {
+    "transport": "stdio",
+    "command": "node mcp.mjs RELEASE_SHA256",
+    "protocolVersion": "2025-06-18",
+    "tools": [
+      "review_claim",
+      "compare_reviews",
+      "replay_review"
+    ],
+    "readOnly": true,
+    "outputPolicy": "Compact tool summary; complete packet via local resources/read. Last 8 packets cached until process exit. Save evidence separately.",
+    "scope": "Local selected archive. Not a hosted broker integration."
+  },
+  "entities": [
+    {
+      "id": "msft",
+      "name": "Microsoft",
+      "market": "US"
+    },
+    {
+      "id": "meta",
+      "name": "Meta Platforms",
+      "market": "US"
+    },
+    {
+      "id": "nvda",
+      "name": "NVIDIA",
+      "market": "US"
+    },
+    {
+      "id": "micron",
+      "name": "Micron Technology",
+      "market": "US"
+    },
+    {
+      "id": "sk",
+      "name": "SK hynix",
+      "market": "KR"
+    },
+    {
+      "id": "samsung",
+      "name": "Samsung Electronics",
+      "market": "KR"
+    },
+    {
+      "id": "tsmc",
+      "name": "Taiwan Semiconductor Manufacturing",
+      "market": "TW"
+    },
+    {
+      "id": "tel",
+      "name": "Tokyo Electron",
+      "market": "JP"
+    },
+    {
+      "id": "adv",
+      "name": "Advantest",
+      "market": "JP"
+    },
+    {
+      "id": "asml",
+      "name": "ASML",
+      "market": "NL"
+    },
+    {
+      "id": "innolight",
+      "name": "中际旭创 / Zhongji Innolight",
+      "market": "CN"
+    },
+    {
+      "id": "eoptolink",
+      "name": "新易盛 / Eoptolink",
+      "market": "CN"
+    }
+  ],
+  "sourceRelease": "9d91cfa989e979d1532d63751c0957ee972321f867328d02c549c46acbd6784e",
+  "sourceSnapshotSha256": "fd89ebd1e929fdf594aa40547d6d8fc85d7b31a0d2bfd4999922b2ab0046cfcf",
+  "asOf": "2026-10-23T23:33:54.268Z",
+  "latestReceipt": "2026-10-23T23:28:05.329753+00:00",
+  "lastFinancialReview": "2026-10-23T23:33:54.267956+00:00",
+  "financialReview": "Existing reviewed annotations only; source collection does not approve changed bytes.",
+  "discovery": "https://ahasignals.com/data/rebalance-review/index.json",
+  "output": {
+    "request": "Normalized private request",
+    "inputs": "Exact previous/current snapshot text and SHA-256",
+    "baselineMode": "Saved snapshot or reconstruction from the current archive",
+    "report": "Per-company thesis status, changes, cash calculations, historical cash bridges and liquidity where reviewed, exact inputs, source checks, forward funding unknowns and limits"
+  },
+  "privacy": "Requests and notes stay local. No positions, weights, account identifiers or automatic reporting. Do not send notes to a remote model unless separately authorized.",
+  "trust": "Pin release and packet hashes independently. Hashes prove consistency, not source truth or what a model consumed.",
+  "noEvidenceMeans": "Unknown, not zero or deterioration",
+  "license": {
+    "code": "MIT",
+    "originalAnnotations": "CC BY 4.0",
+    "issuerSources": "Linked, not redistributed; original rights retained"
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "schemaVersion": "1.0.0",
+  "name": "AhaSignals investment and cash evidence task",
+  "publisher": "AhaSignals",
+  "question": "Do selected AI investment and revenue disclosures establish cash realization?",
+  "runtime": "Node.js 24; offline, no dependencies",
+  "releasePin": "SHA-256 of manifest.json, obtained separately from workflow/index.json",
+  "cohort": [
+    {
+      "id": "msft",
+      "name": "Microsoft"
+    },
+    {
+      "id": "meta",
+      "name": "Meta Platforms"
+    },
+    {
+      "id": "nvda",
+      "name": "NVIDIA"
+    },
+    {
+      "id": "micron",
+      "name": "Micron Technology"
+    },
+    {
+      "id": "sk",
+      "name": "SK hynix"
+    },
+    {
+      "id": "samsung",
+      "name": "Samsung Electronics"
+    },
+    {
+      "id": "tsmc",
+      "name": "Taiwan Semiconductor Manufacturing"
+    },
+    {
+      "id": "tel",
+      "name": "Tokyo Electron"
+    },
+    {
+      "id": "adv",
+      "name": "Advantest"
+    },
+    {
+      "id": "asml",
+      "name": "ASML"
+    },
+    {
+      "id": "innolight",
+      "name": "中际旭创 / Zhongji Innolight"
+    },
+    {
+      "id": "eoptolink",
+      "name": "新易盛 / Eoptolink"
+    },
+    {
+      "id": "alphabet",
+      "name": "Alphabet",
+      "enrolledAt": "2026-10-22T14:54:40.436913+00:00"
+    },
+    {
+      "id": "amazon",
+      "name": "Amazon",
+      "enrolledAt": "2026-10-22T14:54:40.436913+00:00"
+    },
+    {
+      "id": "oracle",
+      "name": "Oracle",
+      "enrolledAt": "2026-10-22T14:54:40.436913+00:00"
+    },
+    {
+      "id": "coreweave",
+      "name": "CoreWeave",
+      "enrolledAt": "2026-10-22T14:54:40.436913+00:00"
+    },
+    {
+      "id": "amd",
+      "name": "AMD",
+      "enrolledAt": "2026-10-22T14:54:40.436913+00:00"
+    },
+    {
+      "id": "broadcom",
+      "name": "Broadcom",
+      "enrolledAt": "2026-10-22T14:54:40.436913+00:00"
+    },
+    {
+      "id": "arista",
+      "name": "Arista Networks",
+      "enrolledAt": "2026-10-22T14:54:40.436913+00:00"
+    },
+    {
+      "id": "vertiv",
+      "name": "Vertiv",
+      "enrolledAt": "2026-10-22T14:54:40.436913+00:00"
+    },
+    {
+      "id": "dell",
+      "name": "Dell Technologies",
+      "enrolledAt": "2026-10-23T14:18:47.813657+00:00"
+    },
+    {
+      "id": "smci",
+      "name": "Super Micro Computer",
+      "enrolledAt": "2026-10-23T14:18:47.813657+00:00"
+    },
+    {
+      "id": "eaton",
+      "name": "Eaton",
+      "enrolledAt": "2026-10-23T14:18:47.813657+00:00"
+    },
+    {
+      "id": "schneider",
+      "name": "Schneider Electric",
+      "enrolledAt": "2026-10-23T14:18:47.813657+00:00"
+    },
+    {
+      "id": "marvell",
+      "name": "Marvell Technology",
+      "enrolledAt": "2026-10-23T23:24:58.615302+00:00"
+    },
+    {
+      "id": "credo",
+      "name": "Credo Technology",
+      "enrolledAt": "2026-10-23T23:24:58.615302+00:00"
+    },
+    {
+      "id": "astera",
+      "name": "Astera Labs",
+      "enrolledAt": "2026-10-23T23:24:58.615302+00:00"
+    },
+    {
+      "id": "lumentum",
+      "name": "Lumentum",
+      "enrolledAt": "2026-10-23T23:24:58.615302+00:00"
+    },
+    {
+      "id": "aaoi",
+      "name": "Applied Optoelectronics",
+      "enrolledAt": "2026-10-23T23:24:58.615302+00:00"
+    },
+    {
+      "id": "cohr",
+      "name": "Coherent",
+      "enrolledAt": "2026-10-23T23:24:58.615302+00:00"
+    },
+    {
+      "id": "ttm",
+      "name": "TTM Technologies",
+      "enrolledAt": "2026-10-23T23:24:58.615302+00:00"
+    },
+    {
+      "id": "besi",
+      "name": "BE Semiconductor Industries",
+      "enrolledAt": "2026-10-23T23:24:58.615302+00:00"
+    }
+  ],
+  "request": {
+    "required": [
+      "asOf"
+    ],
+    "asOf": "ISO timestamp with explicit UTC offset; required even for an empty result",
+    "entity": "Optional cohort ID; omit for all companies enrolled by cutoff",
+    "mode": {
+      "default": "retained-observation",
+      "allowed": [
+        "retained-observation",
+        "retrospective-date"
+      ]
+    }
+  },
+  "commands": {
+    "verify": "node task.mjs verify --release RELEASE_SHA256",
+    "query": "node task.mjs query --release RELEASE_SHA256 --as-of CUTOFF --out NEW_PACKET.json",
+    "replay": "node task.mjs replay --release RELEASE_SHA256 --packet PACKET.json --sha256 PACKET_SHA256"
+  },
+  "outputs": [
+    "releaseSha256",
+    "inputSha256",
+    "request",
+    "answer",
+    "report",
+    "inputText"
+  ],
+  "verification": "Pin ZIP before executing code; task verifies all manifest files, captures checked inputs, recalculates answers and compares reports.",
+  "limits": [
+    "No verified first-public timestamps",
+    "Private issuer bytes are not redistributed or independently authenticated by this packet",
+    "AI-assisted single-operator review",
+    "No established cash return on AI investment",
+    "No trade execution or investment advice"
+  ]
+}

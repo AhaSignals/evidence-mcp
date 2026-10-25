@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "sourceRelease": "9d91cfa989e979d1532d63751c0957ee972321f867328d02c549c46acbd6784e",
+  "files": {
+    "review.mjs": "e57441c0791af29ce4bf8723afdc705f7c877304b2de923db898b80735f6402d",
+    "cash-bridge.mjs": "a6cbc10c497f92b64bbc2fbf26116b4d326e14762e2417fd91c2da8dd8d23909",
+    "load-kit.mjs": "6f49308d6ab9fc4b63830d882df66a1e28e022170f3f4d0b52c9eee3c685753b",
+    "mcp.mjs": "b8db80643f8afaafe520fcdb0051940aa98fa54fa42a25561084db30efdb3edd",
+    "EVALUATION.md": "6c415fb6c41cce5485ca7faa8319f76817f3e9e06667baa4cc26f9309ec07ad6",
+    "workflow.mjs": "b1f74663eba131456887e1927c1858b7a9b25075025ef520898ea906377af21a",
+    "cli.mjs": "8d302bafb49fbd2a857a813ea5a0a24294ac500945f66ae79492e407b5f9fdf1",
+    "LICENSE.txt": "1f68e8f6315e150c5d6d72b19860f674e78e4dc3748e572b2de3f8a7017564ab",
+    "snapshot.json": "fd89ebd1e929fdf594aa40547d6d8fc85d7b31a0d2bfd4999922b2ab0046cfcf",
+    "request.json": "5c3907a926ef4ddf2f230a2ffecf5aba38f09cccfad5b8ac491dc9d387d997fa",
+    "example-review.json": "084f4be1368bb7eac55832c197fb12e34758f236003d33cb647ea8f0d1f417d4",
+    "coverage.json": "59c1633b93150b186e556923a5bbf9acce3f74f735a72eed853c36a522fc84ca",
+    "request.schema.json": "f915dc8f2b35ab451bee6aacdc5fc624ae88aa0444df377cc64c6ed6abe6cdbd",
+    "agent-contract.json": "35eeeedad00447d5210691d9c6b040ff39827265526e1a25f642a12689ba398f",
+    "README.md": "f615e4e06fb1d04ce7b64655e4ea446ba8092ef2b800ee09b2acc7a372f8b6ef"
+  }
+}

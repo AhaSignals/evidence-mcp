@@ -1,0 +1,20 @@
+{
+  "version": "0.1.0",
+  "publisher": "AhaSignals",
+  "files": {
+    "CODE-LICENSE.txt": "c332666f47732a1be1d9fd74f010fd89cb7a0db30ce852be008d4397d96f03b5",
+    "LICENSE.txt": "001dda2c9f1571c9e971fd66ed5e381926a8b58f6b5eae2db284881799cceab0",
+    "README.md": "bedc5469db09933dad08a2f1ef0c47249bb76d726a4e3ccb54ac538a8a9145e3",
+    "cash-checks.csv": "de1ec40018b643b0bc1a890bbbf40dfbbfd3c2da0f0ee85e60121c7c84fad630",
+    "cash-checks.jsonl": "4210db40c55e730e4f76c5fcc0e75d3594f30220d44489c6287b8b9f60f8a1dc",
+    "citation.bib": "32bc2865bea7d68d04a8ef72e8482d52f1056e8d5871fac167b98cac00d86aa3",
+    "events.csv": "074703deeb84bea00749db5ba4d101bfd5bd0c7b6879cc49dc025b89f992174c",
+    "events.jsonl": "a6101ad17d786087469821aeb67f4d5922d375b9007212c77460fa7be12a3ad1",
+    "evidence.py": "1f9a84132120cfaafac4b70dce53ec2682b61eba10d8cc38c332decd39992aa2",
+    "product-terms.csv": "4a665f51b0cf04195a0d0aaac1b7ccfbcb1523ac36e19dad940ebfd39fed45cc",
+    "product-terms.jsonl": "e01f59221b2cf263faf8fb34c5532fddd00c7d3b252d8b0c3e81884694027a91",
+    "sources.csv": "e28d3e843e50f6390e3e5f8d7246f578e88a449744432fb792b3728ded44e265",
+    "sources.jsonl": "d606df2abf0cb25d63203711eb4b55885114e2458f2db4a59f51a3d550215c86",
+    "summary.json": "dbacbb5712daf062479709b4ebbce80f1f97ca94233a444e7cbc18096528c0cb"
+  }
+}

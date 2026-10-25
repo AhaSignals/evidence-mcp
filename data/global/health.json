@@ -1,0 +1,24 @@
+{
+  "scope": "32 selected issuers; frozen 12-issuer baseline plus prospective expansion; known source URLs only, not complete new-filing discovery.",
+  "lastCompletedAt": "2026-10-23T23:28:05.329753+00:00",
+  "expectedSources": 58,
+  "observed": 2,
+  "unavailable": 1,
+  "notAttempted": 55,
+  "status": "partial",
+  "financialReview": "Original seed remains frozen; dated retained-source reviews are separate. Unreviewed byte changes are not financial updates.",
+  "changedDocuments": [],
+  "unpinnedDocuments": [
+    "samsung-q2",
+    "tsmc-q2",
+    "oracle-expansion-2026",
+    "arista-expansion-2026",
+    "vertiv-expansion-2026",
+    "credo-hardware-2026-10-24",
+    "asml-q3-2026-oct24",
+    "tsmc-q3-2026-oct24-management"
+  ],
+  "retention": "Private retention declared by collector receipts; not independently certified.",
+  "lastReviewedAt": "2026-10-23T23:33:54.267956+00:00",
+  "reviewedSourceVersions": 46
+}
