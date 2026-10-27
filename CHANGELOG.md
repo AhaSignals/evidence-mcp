@@ -1,3 +1,10 @@
+# 0.2.0 — 2026-10-27
+
+- Pin the reviewed 41-issuer global snapshot while retaining prospective enrollment and separate 12/4-company tool scopes.
+- Add two read-only compute tools, nine explicitly declared tools, and the reviewed v1.0.1 supplemental counterparty case.
+- Include a citable offline stdio example with a full saved packet, four exact cash reconciliations, microsecond admission checks and replay.
+- Preserve prior releases; no raw financial documents, live credentials, paid services or new financial review dates.
+
 # Changes
 
 ## 0.1.1 — 2026-10-25

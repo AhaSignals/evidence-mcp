@@ -5,9 +5,9 @@ import hashlib,json,zipfile
 ROOT=Path(__file__).resolve().parents[1]
 VERSION=json.loads((ROOT/'package.json').read_text())['version']
 FILES=['manifest.json','package.json','pins.json','LICENSE','README.md','RESEARCH.md',
-       'core.mjs','server.mjs','demo.mjs','examples/scope-check.mjs',
+       'core.mjs','tools.mjs','server.mjs','demo.mjs','examples/scope-check.mjs',
        'examples/scope-check.expected.json','test.mjs','sdk-smoke.mjs','CHANGELOG.md',
-       'scripts/build_bundle.py','scripts/verify_release.py']
+       'scripts/build_bundle.py','scripts/verify_release.py','examples/compute-cash.mjs','examples/compute-cash.expected.json','examples/compute-cash.packet.json','examples/compute-cash.packet.sha256','examples/compute-cash.md','CITATION.cff']
 FILES+=sorted(str(p.relative_to(ROOT)) for p in (ROOT/'data').rglob('*') if p.is_file())
 out=ROOT/'dist';out.mkdir(exist_ok=True)
 archive=out/f'ahasignals-evidence-mcp-{VERSION}.mcpb'

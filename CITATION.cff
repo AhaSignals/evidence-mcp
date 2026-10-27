@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Cite the release, case cutoff and saved evidence packet hash together."
+title: "AhaSignals Evidence MCP: compute commitments and cash evidence"
+version: 0.2.0
+date-released: 2026-10-27
+authors:
+  - name: AhaSignals
+url: "https://github.com/AhaSignals/evidence-mcp/tree/v0.2.0"
+repository-code: "https://github.com/AhaSignals/evidence-mcp"
+license: MIT
+abstract: "Offline financial evidence queries and exact cash reconciliation. Code is MIT; bundled annotations retain their respective data licenses. Selected AI-assisted single-operator research, not independent assurance."

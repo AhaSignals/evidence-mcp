@@ -32,14 +32,35 @@ export async function load(root) {
   const sources=new Map(tables.sources.map(s=>[s.id,s]));
   const eligible=(r,asOf)=>Math.max(workflow.instant(r.observed_at),workflow.instant(r.reviewed_at))<=workflow.instant(asOf);
   const operatingSummary=JSON.parse(files['data/operating/summary.json']);
+  const compute=JSON.parse(files['data/compute/review.json']);
+  const computeEligible=(row,asOf)=>['registeredAt','sourceObservedAt','reviewedAt'].every(k=>row[k]&&workflow.instant(row[k])<=workflow.instant(asOf))&&(!row.acceptedAt||workflow.instant(row.acceptedAt)<=workflow.instant(asOf));
   const cashCoverage=JSON.parse(files['data/cash/coverage.json']);
   const limits=['Selected fixed research snapshot, not live or complete coverage.','Dataset admission is distinct from historical public availability.','AI-assisted single-operator review; no independent financial assurance.','Hashes verify retained public bytes, not private-source authenticity.','No market prices, return prediction, trading, or publishing privileges.'];
   async function execute(name,a) {
     if(name==='get_coverage') {
       const result=await workflow.run(files['data/global/snapshot.json'],pins.files['data/global/snapshot.json'],{asOf:pins.coverageAsOf});
-      return {version:pins.version,coverageAsOf:pins.coverageAsOf,globalDisclosure:result.answer.companies.map(c=>({id:c.entity,name:c.name})),cashReview:{companies:cashCoverage.companies.map(c=>({id:c.entity,name:c.name})),scope:"Historical 12-company cash review"},operatingEvidence:operatingSummary,maintenanceSnapshot:JSON.parse(files['data/maintenance.json']),limits};
+      return {version:pins.version,coverageAsOf:pins.coverageAsOf,globalDisclosure:result.answer.companies.map(c=>({id:c.entity,name:c.name})),cashReview:{companies:cashCoverage.companies.map(c=>({id:c.entity,name:c.name})),scope:"Historical 12-company cash review"},operatingEvidence:operatingSummary,computeCommitments:{subject:compute.studySubject,version:compute.version,reviewedAt:compute.reviewedAt,events:compute.events.length,cashInputs:compute.cashFacts.length,bridges:compute.bridges.length,cohortBoundary:compute.cohortBoundary},maintenanceSnapshot:JSON.parse(files['data/maintenance.json']),limits};
     }
     if(name==='query_disclosure_evidence')return (await workflow.run(files['data/global/snapshot.json'],pins.files['data/global/snapshot.json'],{asOf:a.asOf,...(a.entity?{entity:a.entity}:{})})).answer;
+    if(name==='query_compute_commitments'||name==='check_compute_cash_bridge') {
+      workflow.instant(a.asOf);
+      const events=compute.events.filter(r=>computeEligible(r,a.asOf));
+      const cashFacts=compute.cashFacts.filter(r=>computeEligible(r,a.asOf));
+      if(name==='check_compute_cash_bridge') {
+        const bridge=compute.bridges.find(b=>b.id===a.bridgeId);assert(bridge,'Unknown compute cash bridge');
+        const facts=new Map(cashFacts.map(r=>[r.id,r]));
+        if(![...bridge.inputs,bridge.result].every(id=>facts.has(id)))return {status:'not-admitted-by-cutoff',bridgeId:a.bridgeId,asOf:a.asOf,limits};
+        const inputs=bridge.inputs.map(id=>facts.get(id)),result=facts.get(bridge.result);
+        for(const key of ['period','scope','unit'])assert(inputs.every(r=>r[key]===result[key]),'Incompatible '+key);
+        const recomputed=exactCash({operation:'add',inputs:inputs.map(r=>({...r,qualifier:'exact'}))});
+        assert(recomputed===result.value,'Stored compute bridge differs');
+        return {status:'arithmetic-reproduced',asOf:a.asOf,bridge,inputs,result,recomputed,aiCashAttribution:'unestablished',limits:[...limits,'Unaudited interim company cash is not payment evidence for an individual compute contract.']};
+      }
+      const latest=new Map();
+      for(const row of events){const old=latest.get(row.claimId);if(!old||row.sourceDate>old.sourceDate||(row.sourceDate===old.sourceDate&&workflow.instant(row.reviewedAt)>workflow.instant(old.reviewedAt)))latest.set(row.claimId,row);}
+      const sourceIds=new Set([...events,...cashFacts].map(r=>r.sourceId));
+      return {cutoff:a.asOf,version:compute.version,subject:compute.studySubject,events,latestClaims:[...latest.values()],cashFacts,sources:compute.sources.filter(s=>sourceIds.has(s.id)&&computeEligible(s,a.asOf)),relations:compute.relations.filter(r=>events.some(e=>e.id===r.from)&&events.some(e=>e.id===r.to)),aggregateCommitment:null,boundary:'Retained and reviewed evidence only; no pre-observation historical reconstruction or contract total.',limits:[...limits,...compute.limits]};
+    }
     if(name==='get_operating_changes') {
       workflow.instant(a.asOf);
       if(a.previousAsOf)assert(workflow.instant(a.previousAsOf)<=workflow.instant(a.asOf),'Previous cutoff is after current cutoff');
@@ -64,7 +85,7 @@ export async function load(root) {
     }
     throw Error('Unknown tool');
   }
-  const protocolTools=new Set(['get_coverage','query_disclosure_evidence','get_operating_changes','trace_claim','check_cash_bridge','review_claim']);
+  const protocolTools=new Set(['query_compute_commitments','check_compute_cash_bridge','get_coverage','query_disclosure_evidence','get_operating_changes','trace_claim','check_cash_bridge','review_claim']);
   async function makePacket(name,args) {
     assert(protocolTools.has(name),'Unsupported replayable tool');
     return {schemaVersion:'1.0.0',packageVersion:pins.version,pinsSha256:digest(JSON.stringify(pins)),tool:name,arguments:args,result:await execute(name,args)};

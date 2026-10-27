@@ -1,6 +1,6 @@
 {
   "example": "scope-comparability",
-  "packageVersion": "0.1.1",
+  "packageVersion": "0.2.0",
   "proposedClaim": "Agentforce ARR above USD 1.5 billion proves comparable organic growth.",
   "assessment": "UNKNOWN",
   "reason": "The issuer states that this quarter's ARR scope includes AI offerings, Slackbot and Headless 360.",
@@ -35,7 +35,7 @@
     "source_published_date": "2026-08-26",
     "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000187/crm-q2fy27xexhibit991.htm"
   },
-  "packetSha256": "f9d6fa7b19965390adc867728bc28d29dd62497a6c9397feac41d1237c605f35",
+  "packetSha256": "0c626223e8266e2ffdc9758c646f41975c58475ec80a303d2b9b32ea8b6e00f8",
   "replayVerified": true,
   "limits": [
     "Dataset admission is not first-public availability.",

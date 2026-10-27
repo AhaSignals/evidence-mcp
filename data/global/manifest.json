@@ -2,17 +2,17 @@
   "schemaVersion": "1.0.0",
   "publisher": "AhaSignals",
   "seedVersion": "1.0.0",
-  "sourceReceiptsThrough": "2026-10-23T23:28:05.329753+00:00",
+  "sourceReceiptsThrough": "2026-10-26T13:12:54.269276+00:00",
   "files": {
-    "README.md": "e8dbd566c8567c86646ae20e6022941a4c47e7405f819a3663f4eace8ef1a884",
-    "agent-manifest.json": "5c382ff321c7b17f274fb752d8f47657145eba12530c9842fda3aa4353277f57",
-    "expansion-entities.jsonl": "2e7a29dd25d159e063bd440831692f03a4813ce8d7eb1495f36f91feaa5ebc4d",
-    "expansion-facts.jsonl": "7f8c40ac1fd84f31205d31ca0c647522bf1820524d5eb5f28bb04faa91ebf486",
-    "health.json": "8c888ced44039bc6495ef355473eec6f779f9572f5f72c591c73bfcea79547ad",
-    "snapshot.json": "fd89ebd1e929fdf594aa40547d6d8fc85d7b31a0d2bfd4999922b2ab0046cfcf",
+    "README.md": "9143315014888f230415e50cbc61104b710817f91c81112bcbffa2754e558423",
+    "agent-manifest.json": "362fb007a5cf16bd71e3b453e40d5e51e559d7cc5eabead8ebc520f239570ace",
+    "expansion-entities.jsonl": "996587ded7015c8a53e763277d930f1bd1712e2325e290da9a8ed491de860379",
+    "expansion-facts.jsonl": "def83c9df7fecce685ede086aaec30fe4138f4943053d13b55b9a0097d2f6e50",
+    "health.json": "6b183289951ecc19b29eb241643f38574d5f2956c85ee3c65e3f4c133f8ecfec",
+    "snapshot.json": "a776e7598251366aa3f1f326f52f105388f9e916325cd79543ebed4319bcdf0c",
     "task-report.mjs": "3cdae5f8d7ee08800c2a326913e4d00d851738344fae77ce03ba17d67a6e0ede",
     "task.mjs": "968046904ea28102654416eec2bab816cbff04d9ee9f6215bff050a56026d961",
     "workflow-cli.mjs": "371b353584ac57b4218ca7684ef2926ff46b29575f215785e5cb7155eb12a11c",
-    "workflow.mjs": "b1f74663eba131456887e1927c1858b7a9b25075025ef520898ea906377af21a"
+    "workflow.mjs": "b61281dacf41ad447b78e638a64279c5144b2570c37c2be3baeaa8c8122a5140"
   }
 }

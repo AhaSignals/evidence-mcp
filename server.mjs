@@ -3,18 +3,8 @@ import {load,digest} from './core.mjs';
 import {readFile} from 'node:fs/promises';
 const root=new URL('./',import.meta.url);
 const api=await load(root);
-const clock={type:'string',maxLength:40,description:'ISO timestamp with explicit timezone. Admission uses capture and review clocks.'};
-const id={type:'string',minLength:1,maxLength:120};
-const schema=(properties={},required=[])=>({type:'object',additionalProperties:false,properties,required});
-const tools=[
- ['get_coverage','Read fixed package coverage, review clocks and source-health snapshot. Start here; different tools cover different company sets.',schema()],
- ['query_disclosure_evidence','Query retained and reviewed global AI disclosure evidence at a cutoff. Does not certify first-public availability.',schema({asOf:clock,entity:id},['asOf'])],
- ['get_operating_changes','List admitted operating annotations for CRM, ADBE, INTU or PYPL. A newly admitted record is not necessarily a new business change.',schema({asOf:clock,previousAsOf:clock,issuer:{type:'string',enum:['CRM','ADBE','INTU','PYPL']}},['asOf'])],
- ['trace_claim','Trace an operating record to its source, capture and review clocks. Missing successor evidence stays unknown.',schema({recordId:id,asOf:clock},['recordId','asOf'])],
- ['check_cash_bridge','Recompute a reviewed operating-pilot cash calculation with exact decimals. Requires matching period, unit and scope.',schema({recordId:id,asOf:clock},['recordId','asOf'])],
- ['review_claim','Review cash evidence for the historical 12-company cash cohort. Does not cover all expanded global issuers.',schema({request:api.cashRequestSchema},['request'])],
- ['replay_evidence','Verify and recompute a saved packet using this exact bundled snapshot. Supply packet text and its separately saved SHA-256.',schema({packetText:{type:'string',maxLength:12000000},packetSha256:{type:'string',pattern:'^[a-f0-9]{64}$'}},['packetText','packetSha256'])]
-].map(([name,description,inputSchema])=>({name,description,inputSchema,annotations:{readOnlyHint:true,destructiveHint:false,idempotentHint:true,openWorldHint:false}}));
+import {toolDefinitions} from './tools.mjs';
+const tools=toolDefinitions(api.cashRequestSchema);
 export function validate(value,s) {
  if(s.type==='object') {
   if(!value||typeof value!=='object'||Array.isArray(value))throw Error('Expected object');

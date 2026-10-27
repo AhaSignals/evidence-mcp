@@ -37,14 +37,21 @@ export async function capture(text, expected) {
     requireThat(!seed.documents.some(d=>d.id===doc.id) && seed.entities.some(e=>e.id===doc.entity&&['pilot','expansion'].includes(e.cohort)),'Invalid supplemental source identity.');
     const prior=[...seed.documents,...supplemental].find(d=>d.id===doc.relatedDocumentId&&d.entity===doc.entity&&d.id!==doc.id);
     const nextPeriod=doc.relationshipType==='subsequent-period';
+    const nextEvent=doc.relationshipType==='subsequent-event';
     const entry=doc.relationshipType==='cohort-entry';
     const member=expansion.find(e=>e.id===doc.entity);
     requireThat((entry ? member && doc.relatedDocumentId===null && instant(doc.registeredAt)>=instant(member.enrolledAt)
-      && /^\d{4}-\d{2}-\d{2}$/.test(doc.periodEnd) && doc.periodEnd<=doc.sourceDate
+      && (doc.sourceType==='agreement' ? doc.periodEnd===null && /^\d{4}-\d{2}-\d{2}$/.test(doc.eventDate) && doc.eventDate===doc.sourceDate
+        : /^\d{4}-\d{2}-\d{2}$/.test(doc.periodEnd) && doc.periodEnd<=doc.sourceDate)
       : prior && (nextPeriod
       ? doc.eventId!==prior.eventId && doc.sourceDate>prior.sourceDate
         && /^\d{4}-\d{2}-\d{2}$/.test(doc.periodEnd) && /^\d{4}-\d{2}-\d{2}$/.test(doc.priorPeriodEnd)
         && doc.periodEnd>doc.priorPeriodEnd && doc.periodEnd<=doc.sourceDate
+      : nextEvent
+      ? doc.eventId!==prior.eventId && doc.sourceDate>prior.sourceDate
+        && doc.periodEnd===null && doc.sourceType==='financing-agreement'
+        && /^\d{4}-\d{2}-\d{2}$/.test(doc.eventDate)
+        && doc.eventDate>prior.sourceDate && doc.eventDate<=doc.sourceDate
       : doc.relationshipType===undefined && doc.eventId===prior.eventId))
       && doc.relationship && doc.language && /^https:\/\//.test(doc.url) && doc.sha256===null && doc.publicAvailableAt===null,'Invalid supplemental source provenance.');
     instant(doc.registeredAt);
@@ -85,11 +92,12 @@ const localDay = (timestamp, zone) => {
 };
 function percent(n,d) {
   // Exact decimal inputs; round half up to two percentage decimals.
-  const decimal = v => {requireThat(/^\d+(\.\d+)?$/.test(v),'Non-point value');const [a,b='']=v.split('.');return [BigInt(a+b),10n**BigInt(b.length)];};
+  const decimal = v => {requireThat(/^-?\d+(\.\d+)?$/.test(v),'Non-point value');const [a,b='']=v.split('.');return [BigInt(a+b),10n**BigInt(b.length)];};
   const [a,b]=decimal(n),[c,e]=decimal(d);requireThat(c>0n,'Nonpositive revenue');
   const denominator=b*c, numerator=a*e*10000n;
-  const q=(numerator+denominator/2n)/denominator;
-  return `${q/100n}.${String(q%100n).padStart(2,'0')}`;
+  const negative=numerator<0n, magnitude=negative?-numerator:numerator;
+  const q=(magnitude+denominator/2n)/denominator;
+  return `${negative&&q!==0n?'-':''}${q/100n}.${String(q%100n).padStart(2,'0')}`;
 }
 export function evaluate(seed, receipts, request) {
   requireThat(request && typeof request==='object' && !Array.isArray(request), 'Invalid request.');

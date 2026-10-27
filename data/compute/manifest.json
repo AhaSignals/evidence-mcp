@@ -1,0 +1,15 @@
+{
+  "publisher": "AhaSignals",
+  "version": "v1.0.1",
+  "files": {
+    "CITATION.cff": "c71734f40e1215a5ecd4f31ac357066f64d3517e296cd2b36e720d5da1fbece9",
+    "README.md": "56cd8bc732a1fd1f6d35aec8bb61a52521658d0c5155df87e9c6bb72296c3f7c",
+    "cash.csv": "43ac9b35595c5c347e7850c372b93ea8e817a3c4cc6fef51b1f1fa4783b20b1e",
+    "events.csv": "c73f562666740694688c4c619be2edfc1447121456f800d2024a81be2c761a62",
+    "events.jsonl": "10b80e8741a05c41cec070d1bb3fa40a1c5e23c1ab67c280995028be72d6d8c2",
+    "reader.py": "7961299ae31c54751e1a42fbb26af97acc61b2cc6db10ce67000b4fb40349599",
+    "review.json": "3849264ce7d87bbf01f4cd871159ff9b6d039ad0a6dfd8ce07cdec04c641bbdd",
+    "sources.json": "50b98bb12d88ee086850b4536575215c0fbdfaaaebb0153610aac49e776b1491",
+    "verify.py": "a3bb294068201e0b559c2902e4d53e682f801e78e55d9d84736adccd017539bd"
+  }
+}

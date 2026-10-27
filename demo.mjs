@@ -12,7 +12,7 @@ async function call(name,args={}){const m=await rpc('tools/call',{name,arguments
 try {
  await rpc('initialize',{protocolVersion:'2025-06-18',clientInfo:{name:'ahasignals-protocol-demo',version:'0.1.0'},capabilities:{}});
  child.stdin.write(JSON.stringify({jsonrpc:'2.0',method:'notifications/initialized'})+'\n');
- const listed=await rpc('tools/list');assert.equal(listed.result.tools.length,7);
+ const listed=await rpc('tools/list');assert.equal(listed.result.tools.length,9);
  const before=await call('get_operating_changes',{issuer:'CRM',asOf:'2026-10-24T00:00:00Z'});assert.equal(before.result.records.length,0);
  const after=await call('get_operating_changes',{issuer:'CRM',asOf:'2026-10-25T00:00:00Z'});assert.equal(after.result.records.length,4);
  const trace=await call('trace_claim',{recordId:'crm-arr-scope-fy27q2',asOf:'2026-10-25T00:00:00Z'});
@@ -22,5 +22,5 @@ try {
  assert.equal(createHash('sha256').update(text).digest('hex'),cash.packetSha256);
  const replay=await call('replay_evidence',{packetText:text,packetSha256:cash.packetSha256});assert.equal(replay.verified,true);
  const bad=await rpc('tools/call',{name:'get_operating_changes',arguments:{asOf:'2026-10-25T00:00:00Z',issuer:'NVDA'}});assert.equal(bad.result.isError,true);
- console.log(JSON.stringify({protocol:'stdio MCP',tools:7,earlyCutoffRecords:0,crmAdmittedRecords:4,commonScopeGrowth:'unknown',pyplCash:'1775 USD million',replayVerified:true,unsupportedOperatingIssuerRejected:true,externalAdoption:false},null,2));
+ console.log(JSON.stringify({protocol:'stdio MCP',tools:9,earlyCutoffRecords:0,crmAdmittedRecords:4,commonScopeGrowth:'unknown',pyplCash:'1775 USD million',replayVerified:true,unsupportedOperatingIssuerRejected:true,externalAdoption:false},null,2));
 } finally {clearTimeout(timer);child.stdin.end();child.kill();}

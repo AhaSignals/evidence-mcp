@@ -1,0 +1,45 @@
+{
+  "packageVersion": "0.2.0",
+  "question": "Do reviewed compute commitments establish cash payments or self-funding?",
+  "cutoff": "2026-10-26T13:55:42.926410Z",
+  "earlyCutoffRecords": 0,
+  "admittedEvents": 9,
+  "latestClaims": 8,
+  "cashInputs": 22,
+  "aggregateCommitment": null,
+  "contractCashPaid": "unknown",
+  "aiCashAttribution": "unestablished",
+  "bridges": [
+    {
+      "id": "loss-to-ocf",
+      "status": "arithmetic-reproduced",
+      "value": "3929",
+      "unit": "USD million",
+      "period": "2026-01-01/2026-06-30"
+    },
+    {
+      "id": "cash-change",
+      "status": "arithmetic-reproduced",
+      "value": "97517",
+      "unit": "USD million",
+      "period": "2026-01-01/2026-06-30"
+    },
+    {
+      "id": "cash-balances",
+      "status": "arithmetic-reproduced",
+      "value": "114918",
+      "unit": "USD million",
+      "period": "2026-01-01/2026-06-30"
+    },
+    {
+      "id": "restricted-split",
+      "status": "arithmetic-reproduced",
+      "value": "114918",
+      "unit": "USD million",
+      "period": "2026-01-01/2026-06-30"
+    }
+  ],
+  "packetSha256": "b9b96e513d2c892da8df398da3423c044b447f68ee25835f1f45b8b51794be63",
+  "replayVerified": true,
+  "externalAdoption": false
+}

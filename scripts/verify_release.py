@@ -18,7 +18,8 @@ for p in ROOT.rglob('*'):
     check(str(rel),p.read_bytes());count+=1
 for path,expected in json.loads((ROOT/'pins.json').read_text())['files'].items():
     assert hashlib.sha256((ROOT/path).read_bytes()).hexdigest()==expected,'Pinned data changed: '+path
-for archive in (ROOT/'dist').glob('*.mcpb'):
+version=json.loads((ROOT/'package.json').read_text())['version']
+for archive in (ROOT/'dist').glob(f'ahasignals-evidence-mcp-{version}.mcpb'):
     with zipfile.ZipFile(archive) as z:
         assert len(z.namelist())==len(set(z.namelist())),'Duplicate archive paths'
         for name in z.namelist():

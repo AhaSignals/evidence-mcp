@@ -1,7 +1,7 @@
 # AI investment and cash evidence workflow
 
 Question: Do selected AI investment and revenue disclosures establish cash realization?
-Coverage: 32 selected issuers. The original 12-issuer baseline was selected October 6, 2026. Additional issuers enter only at their recorded enrollment timestamps; earlier cutoffs retain the baseline. Optical cases enter the formal workflow only at their separately recorded promotion clocks; their original v1 scope stays frozen.
+Coverage: 41 selected issuers. The original 12-issuer baseline was selected October 6, 2026. Additional issuers enter only at their recorded enrollment timestamps; earlier cutoffs retain the baseline. Optical cases enter the formal workflow only at their separately recorded promotion clocks; their original v1 scope stays frozen.
 
 This package is original AhaSignals research (CC BY 4.0), not raw issuer documents. It contains the frozen reviewed annotations, later collection receipts, and a browser/Node replay engine. Source owners retain their document rights. AhaSignals is independent and unaffiliated with cited issuers. Research only; not investment advice.
 
@@ -25,7 +25,7 @@ Browser packets use this same task report and release ID. Choose the matching ki
 
 Obtain the manifest hash from a trusted release index and pin it independently. Check manifest.json and the listed files before running code. A hash stored only beside an untrusted file cannot authenticate it. The website uses the same workflow.mjs engine.
 
-    node workflow-cli.mjs query snapshot.json fd89ebd1e929fdf594aa40547d6d8fc85d7b31a0d2bfd4999922b2ab0046cfcf 2026-10-07T00:00:00Z evidence-packet.json innolight
+    node workflow-cli.mjs query snapshot.json a776e7598251366aa3f1f326f52f105388f9e916325cd79543ebed4319bcdf0c 2026-10-07T00:00:00Z evidence-packet.json innolight
     node workflow-cli.mjs replay evidence-packet.json EXPECTED_PACKET_SHA256
 
 The query command prints the packet hash. Retain it separately. Replaying checks the entire packet (including request), the captured input and nested receipts, then recalculates and compares the answer. It never reopens an input after checking it. This binds this workflow's consumption, not arbitrary downstream agents or external calculations.

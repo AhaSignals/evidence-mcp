@@ -3,7 +3,7 @@
   "name": "com.ahasignals/evidence",
   "title": "AhaSignals Evidence",
   "description": "Read-only financial evidence: disclosure cutoffs, operating changes and cash calculations.",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "websiteUrl": "https://ahasignals.com/research/company-kpi-history/#agent-connection",
   "repository": {
     "url": "https://github.com/AhaSignals/evidence-mcp",
@@ -12,8 +12,8 @@
   "packages": [
     {
       "registryType": "mcpb",
-      "identifier": "https://github.com/AhaSignals/evidence-mcp/releases/download/v0.1.1/ahasignals-evidence-mcp-0.1.1.mcpb",
-      "fileSha256": "2b5e21bc6a19fca7f05ae129f0f1443dcdfee4a71b6ee18b326061204694914a",
+      "identifier": "https://github.com/AhaSignals/evidence-mcp/releases/download/v0.2.0/ahasignals-evidence-mcp-0.2.0.mcpb",
+      "fileSha256": "d3ead277bf98bc1f832acd837f16d0a3448c654dd3325cfc44b7c8411bce8f25",
       "transport": {
         "type": "stdio"
       }

@@ -153,6 +153,51 @@
       "id": "besi",
       "name": "BE Semiconductor Industries",
       "enrolledAt": "2026-10-23T23:24:58.615302+00:00"
+    },
+    {
+      "id": "bloom",
+      "name": "Bloom Energy",
+      "enrolledAt": "2026-10-25T03:26:39.462346+00:00"
+    },
+    {
+      "id": "gev",
+      "name": "GE Vernova",
+      "enrolledAt": "2026-10-25T03:26:39.462346+00:00"
+    },
+    {
+      "id": "ceg",
+      "name": "Constellation Energy",
+      "enrolledAt": "2026-10-25T03:26:39.462346+00:00"
+    },
+    {
+      "id": "talen",
+      "name": "Talen Energy",
+      "enrolledAt": "2026-10-25T03:26:39.462346+00:00"
+    },
+    {
+      "id": "vistra",
+      "name": "Vistra",
+      "enrolledAt": "2026-10-25T03:26:39.462346+00:00"
+    },
+    {
+      "id": "nebius",
+      "name": "Nebius Group",
+      "enrolledAt": "2026-10-25T03:26:39.462346+00:00"
+    },
+    {
+      "id": "iren",
+      "name": "IREN",
+      "enrolledAt": "2026-10-25T03:26:39.462346+00:00"
+    },
+    {
+      "id": "celestica",
+      "name": "Celestica",
+      "enrolledAt": "2026-10-25T03:26:39.462346+00:00"
+    },
+    {
+      "id": "sandisk",
+      "name": "Sandisk",
+      "enrolledAt": "2026-10-25T03:26:39.462346+00:00"
     }
   ],
   "request": {

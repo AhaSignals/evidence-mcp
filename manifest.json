@@ -2,7 +2,7 @@
   "manifest_version": "0.3",
   "name": "ahasignals-evidence-mcp",
   "display_name": "AhaSignals Evidence",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Read-only financial evidence: disclosure cutoffs, operating metric scope, cash checks and replay.",
   "author": {
     "name": "AhaSignals",
@@ -25,7 +25,7 @@
       ]
     }
   },
-  "tools_generated": true,
+  "tools_generated": false,
   "keywords": [
     "finance",
     "evidence",
@@ -42,5 +42,43 @@
     "runtimes": {
       "node": ">=22"
     }
-  }
+  },
+  "tools": [
+    {
+      "name": "get_coverage",
+      "description": "Read fixed package coverage, review clocks and source-health snapshot. Start here; different tools cover different company sets."
+    },
+    {
+      "name": "query_disclosure_evidence",
+      "description": "Query retained and reviewed global AI disclosure evidence at a cutoff. Does not certify first-public availability."
+    },
+    {
+      "name": "get_operating_changes",
+      "description": "List admitted operating annotations for CRM, ADBE, INTU or PYPL. A newly admitted record is not necessarily a new business change."
+    },
+    {
+      "name": "trace_claim",
+      "description": "Trace an operating record to its source, capture and review clocks. Missing successor evidence stays unknown."
+    },
+    {
+      "name": "check_cash_bridge",
+      "description": "Recompute a reviewed operating-pilot cash calculation with exact decimals. Requires matching period, unit and scope."
+    },
+    {
+      "name": "review_claim",
+      "description": "Review cash evidence for the historical 12-company cash cohort. Does not cover all expanded global issuers."
+    },
+    {
+      "name": "query_compute_commitments",
+      "description": "Read reviewed compute contract terms, payment conditions, linked claims and source clocks. Selected counterparty case; overlapping obligations cannot be summed."
+    },
+    {
+      "name": "check_compute_cash_bridge",
+      "description": "Recompute a selected company cash bridge, preserving source, period, scope and units. Does not establish contract cash payments."
+    },
+    {
+      "name": "replay_evidence",
+      "description": "Verify and recompute a saved packet using this exact bundled snapshot. Supply packet text and its separately saved SHA-256."
+    }
+  ]
 }
