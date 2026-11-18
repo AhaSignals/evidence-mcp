@@ -1,3 +1,8 @@
+# 0.2.1 — 2026-11-18
+
+- Update the fixed global disclosure snapshot through the AAOI offering agreement review. Historical financing proceeds and the later gross offering limit have separate records.
+- The other research modules retain their previous data pins. Original packets remain available in their tagged releases.
+
 # 0.2.0 — 2026-10-27
 
 - Pin the reviewed 41-issuer global snapshot while retaining prospective enrollment and separate 12/4-company tool scopes.

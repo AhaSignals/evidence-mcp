@@ -49,7 +49,7 @@ export async function capture(text, expected) {
         && doc.periodEnd>doc.priorPeriodEnd && doc.periodEnd<=doc.sourceDate
       : nextEvent
       ? doc.eventId!==prior.eventId && doc.sourceDate>prior.sourceDate
-        && doc.periodEnd===null && doc.sourceType==='financing-agreement'
+        && doc.periodEnd===null && ['financing-agreement','investor-guidance'].includes(doc.sourceType)
         && /^\d{4}-\d{2}-\d{2}$/.test(doc.eventDate)
         && doc.eventDate>prior.sourceDate && doc.eventDate<=doc.sourceDate
       : doc.relationshipType===undefined && doc.eventId===prior.eventId))

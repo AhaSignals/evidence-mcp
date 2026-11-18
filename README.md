@@ -6,14 +6,14 @@ Check a financial claim's source, cutoff and cash arithmetic. The server runs lo
 
 ## Run
 
-Requires Node.js 22 or newer. Download the `.mcpb` file and `SHA256SUMS` from the [versioned GitHub Release](https://github.com/AhaSignals/evidence-mcp/releases/tag/v0.2.0). A compatible MCPB host can import the bundle. Host-specific installation and permissions still apply; directory listing does not install a server automatically.
+Requires Node.js 22 or newer. Download the `.mcpb` file and `SHA256SUMS` from the [versioned GitHub Release](https://github.com/AhaSignals/evidence-mcp/releases/tag/v0.2.1). A compatible MCPB host can import the bundle. Host-specific installation and permissions still apply; directory listing does not install a server automatically.
 
 Alternatively clone this repository and pin the release tag. No npm account or dependency installation is required:
 
 ```sh
 git clone https://github.com/AhaSignals/evidence-mcp.git
 cd evidence-mcp
-git checkout v0.2.0
+git checkout v0.2.1
 ```
 
 Then run:
@@ -85,3 +85,5 @@ Source code is MIT; evidence annotations retain their included CC BY 4.0 license
 [Read the case](examples/compute-cash.md), run `node examples/compute-cash.mjs`, and compare the [expected result](examples/compute-cash.expected.json). The script uses the actual MCP protocol, checks admission one microsecond before review, reads the full resource, reconciles four cash bridges and replays the saved packet. Overlapping commitments have no aggregate total; contract cash payments remain unknown. Cite the version, cutoff and packet hash using [CITATION.cff](CITATION.cff).
 
 The [previous v0.1.1 release](https://github.com/AhaSignals/evidence-mcp/releases/tag/v0.1.1) remains available for its original 32-company snapshot and packets. Version 0.2.0 packages previously reviewed evidence; it does not create new financial observation dates.
+
+Version 0.2.1 pins global disclosure reviews through November 18. The AAOI record identifies a $550 million gross offering limit. Actual November proceeds are unknown. Earlier packets can be replayed with [v0.2.0](https://github.com/AhaSignals/evidence-mcp/tree/v0.2.0).

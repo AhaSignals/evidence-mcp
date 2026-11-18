@@ -25,7 +25,7 @@ Browser packets use this same task report and release ID. Choose the matching ki
 
 Obtain the manifest hash from a trusted release index and pin it independently. Check manifest.json and the listed files before running code. A hash stored only beside an untrusted file cannot authenticate it. The website uses the same workflow.mjs engine.
 
-    node workflow-cli.mjs query snapshot.json a776e7598251366aa3f1f326f52f105388f9e916325cd79543ebed4319bcdf0c 2026-10-07T00:00:00Z evidence-packet.json innolight
+    node workflow-cli.mjs query snapshot.json a14b0f5dc3f9a9c528579e4ba4b64112c25f99f374a868993570a2a755a835b2 2026-10-07T00:00:00Z evidence-packet.json innolight
     node workflow-cli.mjs replay evidence-packet.json EXPECTED_PACKET_SHA256
 
 The query command prints the packet hash. Retain it separately. Replaying checks the entire packet (including request), the captured input and nested receipts, then recalculates and compares the answer. It never reopens an input after checking it. This binds this workflow's consumption, not arbitrary downstream agents or external calculations.
