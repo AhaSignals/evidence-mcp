@@ -6,7 +6,7 @@
 
 ## Run and inspect
 
-Use the **v0.2.1** release and Node.js 22 or newer. No credentials, live requests, installation service or paid model are required.
+Use the **v0.2.2** release and Node.js 22 or newer. No credentials, live requests, installation service or paid model are required.
 
 ```sh
 node examples/compute-cash.mjs
@@ -39,7 +39,7 @@ The example returns zero event and cash rows at **13:55:42.926409Z**, then admit
 
 ## Challenge or cite the result
 
-Cite AhaSignals, *Compute commitments and cash: a reproducible evidence check*, Evidence MCP **v0.2.1**, using `CITATION.cff`, the tagged example URL and the packet hash. Keep the release and cutoff together. A hash checks bytes; it does not prove the underlying source is authentic or the interpretation is correct.
+Cite AhaSignals, *Compute commitments and cash: a reproducible evidence check*, Evidence MCP **v0.2.2**, using `CITATION.cff`, the tagged example URL and the packet hash. Keep the release and cutoff together. A hash checks bytes; it does not prove the underlying source is authentic or the interpretation is correct.
 
 To dispute a conclusion, identify the record ID, source locator, period or condition at issue. A later correction should append a new case/package version and link to this result. The v0.1.1 package remains available for its original packets; the new server rejects packets from another package version.
 

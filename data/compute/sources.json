@@ -81,5 +81,28 @@
     "rights": "Link and selected factual annotations only; source text and tables not redistributed. Source-owner rights reserved.",
     "acceptedAt": null,
     "firstPublicAt": null
+  },
+  {
+    "id": "anthropic-424b4-20261119",
+    "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026074944/anthropicpbc-424b4.htm",
+    "sourceDate": "2026-11-19",
+    "role": "filing",
+    "registeredAt": "2026-11-19T13:20:16.514110+00:00",
+    "sha256": "207ffea192e8b2198ea65b22b3163c96205e6d563e1a5825298fcf52e5de63c0",
+    "bytes": 14400530,
+    "sourceObservedAt": "2026-11-19T13:20:49.916126+00:00",
+    "reviewedAt": "2026-11-19T13:28:35.692003+00:00",
+    "reviewedPeriods": [
+      "2026-01-01/2026-09-30",
+      "subsequent commitments through the prospectus",
+      "contract-specific future terms"
+    ],
+    "reviewScope": "English final prospectus. Selected MD&A contractual obligations and hosting agreements, Notes 13 and 17, and consolidated F-13/F-14 cash bridge.",
+    "rights": "Link and selected factual annotations only; source text and tables not redistributed. Source-owner rights reserved.",
+    "acceptedAt": "2026-11-19T11:05:50Z",
+    "firstPublicAt": null,
+    "priorSourceId": "anthropic-s1-20261026",
+    "relationshipType": "subsequent-disclosure",
+    "language": "en"
   }
 ]

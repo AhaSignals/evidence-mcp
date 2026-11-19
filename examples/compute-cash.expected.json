@@ -1,5 +1,5 @@
 {
-  "packageVersion": "0.2.1",
+  "packageVersion": "0.2.2",
   "question": "Do reviewed compute commitments establish cash payments or self-funding?",
   "cutoff": "2026-10-26T13:55:42.926410Z",
   "earlyCutoffRecords": 0,
@@ -39,7 +39,7 @@
       "period": "2026-01-01/2026-06-30"
     }
   ],
-  "packetSha256": "fd9962ff3cbb186bda07bcab0de1670fc3e84c1eeb534754b279fa5d9c5f3a0f",
+  "packetSha256": "f084363f270cb91da598d838a245fac6b91471205cd0a1cd75351884d7367525",
   "replayVerified": true,
   "externalAdoption": false
 }

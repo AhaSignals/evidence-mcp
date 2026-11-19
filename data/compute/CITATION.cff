@@ -4,8 +4,8 @@ title: "Compute commitments and cash evidence"
 type: dataset
 authors:
   - name: AhaSignals
-version: "1.0.1"
-date-released: "2026-10-26"
+version: "1.1.0"
+date-released: "2026-11-19"
 url: "https://ahasignals.com/research/global-ai-disclosure-evidence/#compute-commitments"
 license: CC-BY-4.0
 abstract: "Selected contract conditions and cash-flow reconciliation from public disclosures; AI-assisted single-operator research, not independent assurance."

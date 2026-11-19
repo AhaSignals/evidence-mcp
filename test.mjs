@@ -32,3 +32,18 @@ test('manifest lists exactly the protocol tools',async()=>{
  assert.equal(manifest.tools_generated,false);assert.deepEqual(manifest.tools,toolDefinitions(api.cashRequestSchema).map(({name,description})=>({name,description})));
 });
 test('older package packets require the original release',async()=>{const p=await api.makePacket('get_coverage',{});p.packageVersion='0.1.1';const text=JSON.stringify(p);await assert.rejects(api.replay(text,digest(text)),/original pinned package/);});
+
+test('November prospectus admission preserves the October view', async () => {
+  const coverage = await api.execute('get_coverage', {});
+  const {reviewedAt} = coverage.computeCommitments;
+  const before = '2026-11-18T23:59:59Z';
+  const bridgeId = 'cash-change-9m-2026';
+  const earlier = await api.execute('query_compute_commitments', {asOf: before});
+  const current = await api.execute('query_compute_commitments', {asOf: reviewedAt});
+  assert.equal(earlier.events.length, 9);
+  assert.equal(current.events.length, 16);
+  assert.equal(current.cashFacts.length, 27);
+  assert.equal(current.aggregateCommitment, null);
+  assert.equal((await api.execute('check_compute_cash_bridge', {asOf: before, bridgeId})).status, 'not-admitted-by-cutoff');
+  assert.equal((await api.execute('check_compute_cash_bridge', {asOf: reviewedAt, bridgeId})).recomputed, '80751');
+});
