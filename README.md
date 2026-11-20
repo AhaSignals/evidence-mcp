@@ -6,14 +6,14 @@ Check a financial claim's source, cutoff and cash arithmetic. The server runs lo
 
 ## Run
 
-Requires Node.js 22 or newer. Download the `.mcpb` file and `SHA256SUMS` from the [versioned GitHub Release](https://github.com/AhaSignals/evidence-mcp/releases/tag/v0.2.2). A compatible MCPB host can import the bundle. Host-specific installation and permissions still apply; directory listing does not install a server automatically.
+Requires Node.js 22 or newer. Download the `.mcpb` file and `SHA256SUMS` from the [versioned GitHub Release](https://github.com/AhaSignals/evidence-mcp/releases/tag/v0.2.3). A compatible MCPB host can import the bundle. Host-specific installation and permissions still apply; directory listing does not install a server automatically.
 
 Alternatively clone this repository and pin the release tag. No npm account or dependency installation is required:
 
 ```sh
 git clone https://github.com/AhaSignals/evidence-mcp.git
 cd evidence-mcp
-git checkout v0.2.2
+git checkout v0.2.3
 ```
 
 Then run:
@@ -38,7 +38,7 @@ The path is a placeholder. This configuration starts a stdio process, not an HTT
 - Global disclosure query: 41 selected companies at the packaged cutoff; prior cutoffs respect prospective enrollment. This is not a comprehensive market universe.
 - Cash review: the separately frozen historical 12-company review. The larger global cohort does not expand this tool's scope.
 - Compute commitments: a separate reviewed Anthropic counterparty case, 16 events, 27 cash inputs and five cash bridges. It does not add a 42nd cohort issuer.
-- Operating evidence: CRM, ADBE, INTU and PYPL; six annotations, four cash calculations and two initial product-terms observations. No complete management-promise outcome panel yet.
+- Operating evidence: CRM, ADBE, INTU and PYPL; nine annotations, five cash calculations and two initial product-terms observations. No complete management-promise outcome panel yet.
 
 Use `get_coverage` for exact pins and clocks. Financial facts are admitted under capture/review rules; historical first-public availability may remain unknown. Missing records are not evidence of business deterioration. Initial product observations do not establish price changes. No stock prices, market-response model, forecasts, validated factor, execution or independent financial assurance are included.
 
@@ -89,3 +89,5 @@ The [previous v0.1.1 release](https://github.com/AhaSignals/evidence-mcp/release
 Version 0.2.1 pins global disclosure reviews through November 18. The AAOI record identifies a $550 million gross offering limit. Actual November proceeds are unknown. Earlier packets can be replayed with [v0.2.0](https://github.com/AhaSignals/evidence-mcp/tree/v0.2.0).
 
 Version 0.2.2 updates only the compute data pin to v1.1.0. The November prospectus distinguishes fixed purchases, conditional amounts and variable estimates. Use `cash-change-9m-2026` for the September nine-month reconciliation. The October cutoff and earlier versioned packages retain their evidence.
+
+Version 0.2.3 includes operating evidence v0.1.1. Query INTU to follow two announced definitions into the first quarter and distinguish the subsequent sale agreement from quarter-end cash. October queries still return the original records.

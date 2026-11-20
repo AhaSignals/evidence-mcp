@@ -47,3 +47,13 @@ test('November prospectus admission preserves the October view', async () => {
   assert.equal((await api.execute('check_compute_cash_bridge', {asOf: before, bridgeId})).status, 'not-admitted-by-cutoff');
   assert.equal((await api.execute('check_compute_cash_bridge', {asOf: reviewedAt, bridgeId})).recomputed, '80751');
 });
+
+test('Intuit follow-up distinguishes first-quarter cash from the later agreement', async () => {
+  const params = { issuer: 'INTU', asOf: api.pins.coverageAsOf };
+  const prior = await api.execute('get_operating_changes', { ...params, asOf: '2026-11-19T23:59:59Z' });
+  const added = await api.execute('get_operating_changes', { ...params, previousAsOf: '2026-11-19T23:59:59Z' });
+  assert(prior.records.every(row => row.previous_record_id === null));
+  assert.equal(added.records.find(row => row.id === 'intu-mailchimp-sale-agreement').details.cash_proceeds_received, null);
+  const cash = await api.execute('check_cash_bridge', { recordId: 'intu-cash-less-ppe-q1-fy27', asOf: params.asOf });
+  assert.equal(cash.recomputed, '987');
+});

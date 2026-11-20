@@ -1,3 +1,7 @@
+# 0.2.3 — 2026-11-20
+
+Pins operating evidence v0.1.1. The Intuit first-quarter reporting changes, consolidated cash bridge and conditional Mailchimp sale agreement enter at the November review cutoff. The previous package and earlier cutoffs remain available.
+
 # 0.2.2 — 2026-11-19
 
 Adds the final Anthropic prospectus to the compute snapshot. Seven scoped obligation records, five nine-month cash inputs and a new cash-change calculation enter at the November 19 review clock. The October example still returns nine events and 22 cash inputs.

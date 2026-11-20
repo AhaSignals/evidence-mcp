@@ -1,6 +1,6 @@
 {
   "name": "ahasignals-evidence-mcp",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Read-only financial disclosure evidence, operating changes, cash checks and reproducible cutoff queries.",
   "mcpName": "com.ahasignals/evidence",
   "type": "module",

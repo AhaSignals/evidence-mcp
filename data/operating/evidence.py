@@ -77,6 +77,7 @@ def verify(root):
         if source['capture_status'] == 'retained' and not re.fullmatch('[a-f0-9]{64}', source['sha256'] or ''):
             raise ValueError('Missing source digest')
     for table in TABLES[1:]:
+        predecessors = {}
         for r in data[table]:
             source = sources[r['source_id']]
             if clock(r['reviewed_at']) < clock(source['observed_at']):
@@ -88,8 +89,13 @@ def verify(root):
             if source['capture_status'] != 'retained':
                 raise ValueError('A failed source cannot support a reviewed record')
             if r['previous_record_id'] is not None:
-                # Initial release has no separately reviewed prior snapshots.
-                raise ValueError('Unverified predecessor in initial release')
+                prior = predecessors.get(r['previous_record_id'])
+                if (manifest['version'] == '0.1.0' or prior is None
+                        or prior['issuer'] != r['issuer']
+                        or clock(prior['reviewed_at']) > clock(r['reviewed_at'])
+                        or r['history_status'] not in ('implementation-of-announced-change', 'subsequent-period', 'subsequent-event')):
+                    raise ValueError('Invalid predecessor: ' + r['id'])
+            predecessors[r['id']] = r
             if table == 'cash-checks' and calculate(r) != r['result']:
                 raise ValueError('Calculation mismatch: ' + r['id'])
             if table == 'product-terms':

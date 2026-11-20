@@ -1,6 +1,6 @@
 {
-  "version": "0.1.0",
-  "reviewed_at": "2026-10-24T23:42:55.474666+00:00",
+  "version": "0.1.1",
+  "reviewed_at": "2026-11-20T13:12:17.943936+00:00",
   "operator": "AhaSignals",
   "issuers": [
     "CRM",
@@ -9,13 +9,14 @@
     "PYPL"
   ],
   "counts": {
-    "sources": 7,
-    "events": 6,
-    "cash-checks": 4,
+    "sources": 10,
+    "events": 9,
+    "cash-checks": 5,
     "product-terms": 2
   },
   "base_version_unchanged": "0.1.1",
-  "initial_observation_only": true,
+  "initial_observation_only": false,
   "validated_return_signal": false,
-  "independent_reference_review": false
+  "independent_reference_review": false,
+  "previous_version": "0.1.0"
 }
