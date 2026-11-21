@@ -1,3 +1,7 @@
+# 0.2.4 — 2026-11-21
+
+Pins operating evidence v0.1.2. Two Salesforce employee add-on prices rose by $25 per user per month between US price-page observations. Both observations enter at the November 21 review. Earlier cutoffs replay the earlier evidence.
+
 # 0.2.3 — 2026-11-20
 
 Pins operating evidence v0.1.1. The Intuit first-quarter reporting changes, consolidated cash bridge and conditional Mailchimp sale agreement enter at the November review cutoff. The previous package and earlier cutoffs remain available.

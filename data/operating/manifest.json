@@ -1,20 +1,20 @@
 {
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "AhaSignals",
   "files": {
     "CODE-LICENSE.txt": "c332666f47732a1be1d9fd74f010fd89cb7a0db30ce852be008d4397d96f03b5",
     "LICENSE.txt": "001dda2c9f1571c9e971fd66ed5e381926a8b58f6b5eae2db284881799cceab0",
-    "README.md": "0434c3ff0e498f742e10cedb01510d6b8a8354a6bad7dad29cbf0ac4d2be6b89",
+    "README.md": "344a8271582cb894e2ab4c1774b312e15179c2fb3435bc8f3ac360437a9ca4f7",
     "cash-checks.csv": "10510d6792f42b4aa7524fc21edfc49c3168011baccf959498678705e5272d12",
     "cash-checks.jsonl": "debe0b6b5df2d51bc5eda3098881eeac0c34e716a4d978e2ee28de02ab41f7b8",
-    "citation.bib": "1923ad8f2ac658dc9c78d8445a8f50687251b19c330ac0804a80e64784c5a2f7",
+    "citation.bib": "e4488a8d119e34143c8cab79ba691bf3d07989ecf73c317075430299d6fc0074",
     "events.csv": "a252d65e8c8c3f37f46bb8542cd9445fc764a4daf23b7f20be2b0f072a1d80ff",
     "events.jsonl": "df12ad2777f8cb4c30028c5d2e748110a914d39ebed1983368f5e4f2d1366ad8",
-    "evidence.py": "be2f3a10ffc629bcba4f9bd8c92397dfb87a7ddabe07c402cb43b5d5370e7b9d",
-    "product-terms.csv": "4a665f51b0cf04195a0d0aaac1b7ccfbcb1523ac36e19dad940ebfd39fed45cc",
-    "product-terms.jsonl": "e01f59221b2cf263faf8fb34c5532fddd00c7d3b252d8b0c3e81884694027a91",
-    "sources.csv": "91da59c581f247b8d36caf7149b6fcbe8af52b0419142f07cd8bdd3e7028a8a6",
-    "sources.jsonl": "b8482305882697f3388bb0058c0c20a4438b0b33495a9afcdb669d320307bd5b",
-    "summary.json": "a5dc2cee803652f5d3e7ec9603a9515251d452c64c33de0bccf2be32b75f3fee"
+    "evidence.py": "ce00513e2c3261eae6d32f923e4cecbfe5e67a0f38722e039a6e708d226f3d3e",
+    "product-terms.csv": "e35b2ba5f1a531c1490795908bd63edefb0f7423ae600fd0e3cf0948c29806fb",
+    "product-terms.jsonl": "5db1371d805d6101412752bf1ae4ec2e9030a349511fb1ce4adc59cca96be747",
+    "sources.csv": "5e7b1dfe37ae7f049b674dce70d4832036958f92ec5349577c42fc8323e0237f",
+    "sources.jsonl": "1b2696ab5197af4b65231608d375001668f78fdb287dc2f8b3211e1c0080a1de",
+    "summary.json": "b38fe6fe323a3d520ead20d59e6818e724f5d9c0b624cf11c32bfe01512832df"
   }
 }

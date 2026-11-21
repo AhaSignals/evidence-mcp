@@ -48,6 +48,27 @@ def calculate(check):
     return format(result, 'f')
 
 
+def verify_price(record, prior):
+    amount = Decimal(record['list_price'])
+    quantity = Decimal(record['quantity'])
+    if not (amount.is_finite() and amount > 0 and quantity.is_finite() and quantity > 0):
+        raise ValueError('Invalid list price or pricing unit')
+    if prior is None:
+        if record['change_status'] != 'initial-observation' or record['price_change'] is not None:
+            raise ValueError('First observation cannot prove a price change')
+        return
+    basis = ('issuer', 'product', 'scope', 'locale', 'currency', 'unit', 'quantity', 'billing_period')
+    if any(not record.get(field) or record[field] != prior.get(field) for field in basis):
+        raise ValueError('Incomparable product-price basis')
+    if clock(record['observed_at']) <= clock(prior['observed_at']):
+        raise ValueError('Price comparison needs a later source capture')
+    difference = amount - Decimal(prior['list_price'])
+    if (record['history_status'] != 'subsequent-price-observation'
+            or record['change_status'] != 'observed-list-price-change'
+            or difference == 0 or Decimal(record['price_change']) != difference):
+        raise ValueError('Invalid list-price change')
+
+
 def verify(root):
     manifest = json.loads((root / 'manifest.json').read_text())
     expected = manifest['files']
@@ -93,16 +114,14 @@ def verify(root):
                 if (manifest['version'] == '0.1.0' or prior is None
                         or prior['issuer'] != r['issuer']
                         or clock(prior['reviewed_at']) > clock(r['reviewed_at'])
-                        or r['history_status'] not in ('implementation-of-announced-change', 'subsequent-period', 'subsequent-event')):
+                        or (table != 'product-terms' and r['history_status'] not in
+                            ('implementation-of-announced-change', 'subsequent-period', 'subsequent-event'))):
                     raise ValueError('Invalid predecessor: ' + r['id'])
             predecessors[r['id']] = r
             if table == 'cash-checks' and calculate(r) != r['result']:
                 raise ValueError('Calculation mismatch: ' + r['id'])
             if table == 'product-terms':
-                if r['change_status'] != 'initial-observation' or r['price_change'] is not None:
-                    raise ValueError('First observation cannot prove a price change')
-                if Decimal(r['list_price']) <= 0 or Decimal(r['quantity']) <= 0:
-                    raise ValueError('Invalid price unit')
+                verify_price(r, predecessors.get(r['previous_record_id']))
             if r.get('event_type') == 'issuer-explained-guidance-change':
                 detail = r['details']
                 if sum(Decimal(detail[k]) for k in ('organic_change', 'pending_acquisition_change', 'currency_change')) != Decimal(detail['reported_net_change']):

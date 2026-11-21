@@ -57,3 +57,17 @@ test('Intuit follow-up distinguishes first-quarter cash from the later agreement
   const cash = await api.execute('check_cash_bridge', { recordId: 'intu-cash-less-ppe-q1-fy27', asOf: params.asOf });
   assert.equal(cash.recomputed, '987');
 });
+
+test('Salesforce price comparisons enter at the review cutoff', async () => {
+  const before = '2026-11-21T13:11:34.843542Z';
+  const reviewed = '2026-11-21T13:11:34.843543Z';
+  const update = await api.execute('get_operating_changes', { issuer: 'CRM', previousAsOf: before, asOf: reviewed });
+  assert.equal(update.records.length, 4);
+  const amounts = update.records.filter(row => row.previous_record_id).map(row => {
+    const previous = update.records.find(candidate => candidate.id === row.previous_record_id);
+    assert.equal(row.price_change, '25');
+    assert.equal(row.realized_customer_price, null);
+    return [previous.list_price, row.list_price];
+  });
+  assert.deepEqual(amounts, [['125', '150'], ['150', '175']]);
+});

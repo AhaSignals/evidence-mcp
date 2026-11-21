@@ -2,7 +2,7 @@
   "manifest_version": "0.3",
   "name": "ahasignals-evidence-mcp",
   "display_name": "AhaSignals Evidence",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Read-only financial evidence: disclosure cutoffs, operating metric scope, cash checks and replay.",
   "author": {
     "name": "AhaSignals",
